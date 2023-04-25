@@ -1,31 +1,31 @@
 ---
-title: 'Tutorial: Tic-Tac-Toe'
+title: 'Навчальний посібник: хрестики-нулики'
 ---
 
 <Intro>
 
-You will build a small tic-tac-toe game during this tutorial. This tutorial does not assume any existing React knowledge. The techniques you'll learn in the tutorial are fundamental to building any React app, and fully understanding it will give you a deep understanding of React.
+Ви побудуєте маленьку гру хрестики-нулики під час розгляду цього навчального посібника. Цей посібник не передбачає наявних знаннь React. Техніки, які ви вивчите в цьому посібнику фундаментальні, щоб побудувати будь-який застосунок React, і його повне розуміння дасть вам глибше розуміння React.
 
 </Intro>
 
 <Note>
 
-This tutorial is designed for people who prefer to **learn by doing** and want to quickly try making something tangible. If you prefer learning each concept step by step, start with [Describing the UI.](/learn/describing-the-ui)
+Цей посібник створено для людей що надають перевагу **навчатись роблячи** і хочуть швидко спробувати зробити щось справжнє. Якщо ви надаєте перевагу вивченню кожного концепту крок за кроком, почніть з [Опису інтерфейсу.](/learn/describing-the-ui)
 
 </Note>
 
-The tutorial is divided into several sections:
+Посібник поділено на кілька розділів:
 
-- [Setup for the tutorial](#setup-for-the-tutorial) will give you **a starting point** to follow the tutorial.
-- [Overview](#overview) will teach you **the fundamentals** of React: components, props, and state.
-- [Completing the game](#completing-the-game) will teach you **the most common techniques** in React development.
-- [Adding time travel](#adding-time-travel) will give you **a deeper insight** into the unique strengths of React.
+- [Налаштування для посібника](#setup-for-the-tutorial) дає **стартову точку** щоб слідувати посібнику.
+- [Огляд](#overview) навчить вас **основам** React: компонентам, пропсам, та стану.
+- [Завершення гри](#completing-the-game) навчить **найбільш поширеним технікам** в React розробці.
+- [Додавання подорожей в часі](#adding-time-travel) дасть вам **глибше позуміння** унікальних та сильних сторін React.
 
-### What are you building? {/*what-are-you-building*/}
+### Що ви побудуєте? {/*what-are-you-building*/}
 
-In this tutorial, you'll build an interactive tic-tac-toe game with React.
+В цьому посібнику ви збудуєте інтерактивну гру в хрестики-нулики з React.
 
-You can see what it will look like when you're finished here:
+Тут ви можете побачити як вона буде виглядати коли ви закінчите:
 
 <Sandpack>
 
@@ -57,9 +57,9 @@ function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = 'Переможець: ' + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = 'Наступний гравець: ' + (xIsNext ? 'X' : 'O');
   }
 
   return (
@@ -103,9 +103,9 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      description = 'Go to move #' + move;
+      description = 'Перейти до руху #' + move;
     } else {
-      description = 'Go to game start';
+      description = 'На початок гри';
     }
     return (
       <li key={move}>
@@ -194,15 +194,15 @@ body {
 
 </Sandpack>
 
-If the code doesn't make sense to you yet, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
+Якщо код ще не має сенсу для вас або якщо ви не знайомі з синтаксисом, не хвилюйтеся! Мета цього підручника — допомогти вам зрозуміти React та його синтаксис.
 
-We recommend that you check out the tic-tac-toe game above before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.
+Ми рекомендуємо вам ознайомитися з грою в хрестики-нулики вище, перш ніж продовжити навчання. Однією з особливостей, яку ви помітите, є пронумерований список праворуч від ігрового поля. Цей список дає вам історію всіх ходів, які відбулися в грі, і він оновлюється по ходу гри.
 
-Once you've played around with the finished tic-tac-toe game, keep scrolling. You'll start with a simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+Після того, як ви пограєте з готовою грою в хрестики-нулики, продовжуйте скролити. У цьому посібнику ви почнете з простішого шаблону. Наш наступний крок — налаштувати вас, щоб ви могли почати створювати гру.
 
-## Setup for the tutorial {/*setup-for-the-tutorial*/}
+## Налаштування посібника {/*setup-for-the-tutorial*/}
 
-In the live code editor below, click **Fork** in the top-right corner to open the editor in a new tab using the website CodeSandbox. CodeSandbox lets you write code in your browser and preview how your users will see the app you've created. The new tab should display an empty square and the starter code for this tutorial.
+У  редакторі коду нижче натисніть **Fork** у верхньому правому куті, щоб відкрити редактор у новій вкладці за допомогою веб-сайту CodeSandbox. CodeSandbox дозволяє писати код у вашому браузері та попередньо переглядати, як користувачі бачитимуть створений вами застосунок. Нова вкладка має відображати порожній квадрат і початковий код для цього посібника.
 
 <Sandpack>
 
@@ -261,33 +261,33 @@ body {
 
 <Note>
 
-You can also follow this tutorial using your local development environment. To do this, you need to:
+Ви також можете слідувати цьому посібнику в вашому середовищі розробки. Щоб зробити це, вам потрібно:
 
-1. Install [Node.js](https://nodejs.org/en/)
-1. In the CodeSandbox tab you opened earlier, press the top-left corner button to open the menu, and then choose **File > Export to ZIP** in that menu to download an archive of the files locally
-1. Unzip the archive, then open a terminal and `cd` to the directory you unzipped
-1. Install the dependencies with `npm install`
-1. Run `npm start` to start a local server and follow the prompts to view the code running in a browser
+1. Встановити [Node.js](https://nodejs.org/en/)
+1. У вкладці CodeSandbox, яку ви відкрили до цього, натисніть кнопку в верхньому лівому куті щоб відкрити меню, потім оберіть **File > Export to ZIP** в меню щоб завантажити архів з файлами.
+1. Розпакуйте архів, потім відкрийте термінал та перейдіть в директорію, в яку ви розпакували за допомогою `cd`.
+1. Установіть залежності з `npm install`
+1. Виконайте `npm start` щоб запустити локальний сервер та слідуйте вказівкам щоб побачити код працюючим в браузері.
 
-If you get stuck, don't let this stop you! Follow along online instead and try a local setup again later.
+Якщо ви відчуваєте що застрягли, не зупиняйтесь! Натомість слідуйте посібнику онлайн та спробуйте налаштувати локально пізніше. 
 
 </Note>
 
-## Overview {/*overview*/}
+## Огляд {/*overview*/}
 
-Now that you're set up, let's get an overview of React!
+Тепер коли все налаштоване, давайте оглянемо React!
 
-### Inspecting the starter code {/*inspecting-the-starter-code*/}
+### Дослідження початкового коду{/*inspecting-the-starter-code*/}
 
-In CodeSandbox you'll see three main sections:
+В CodeSandbox ви побачите основні три розділи:
 
-![CodeSandbox with starter code](../images/tutorial/react-starter-code-codesandbox.png)
+![CodeSandbox з початковим кодом](../images/tutorial/react-starter-code-codesandbox.png)
 
-1. The _Files_ section with a list of files like `App.js`, `index.js`, `styles.css` and a folder called `public`
-1. The _code editor_ where you'll see the source code of your selected file
-1. The _browser_ section where you'll see how the code you've written will be displayed
+1. Розділ _Файли_ зі списком файлів, таких як `App.js`, `index.js`, `styles.css` та директорія `public`
+1. _Редактор коду_ де ви побачите сирцевий код обраного файлу
+1. Розділ _Браузер_ де ви побачите як відображається код що ви написали
 
-The `App.js` file should be selected in the _Files_ section. The contents of that file in the _code editor_ should be:
+`App.js` файл має бути обраним в розділі _Файли_. Зміст цього файлу в _редакторі коду_ має бути:
 
 ```jsx
 export default function Square() {
@@ -295,15 +295,15 @@ export default function Square() {
 }
 ```
 
-The _browser_ section should be displaying a square with a X in it like this:
+Розділ _Браузер_ має показувати квадрат з символом X в ньому як тут:
 
 ![x-filled square](../images/tutorial/x-filled-square.png)
 
-Now let's have a look at the files in the starter code.
+Тепер давайте глянемо на файли в початковому коді.
 
 #### `App.js` {/*appjs*/}
 
-The code in `App.js` creates a _component_. In React, a component is a piece of reusable code that represents a part of a user interface. Components are used to render, manage, and update the UI elements in your application. Let's look at the component line by line to see what's going on:
+Код в `App.js` створює _компонент_. В React, компонент це шматок перевикористовуваного коду що репрезентує частину інтерфейсу користувача. Компоненти використовуються щоб відображати, керувати та оновлювати елементи інтерфейсу в вашому застосунку. Давайте подивимось на компонент строка за строкою щоб зрозуміти що відбувається:
 
 ```js {1}
 export default function Square() {
@@ -311,7 +311,7 @@ export default function Square() {
 }
 ```
 
-The first line defines a function called `Square`. The `export` JavaScript keyword makes this function accessible outside of this file. The `default` keyword tells other files using your code that it's the main function in your file.
+Перша строка визначає функцію що називається `Square`. Ключове слово `export` в JavaScript робить цю функцію доступною ззовні. Ключове слово `default` каже іншим файлам що використовують цей код, що це головна функція в цьому файлі.
 
 ```js {2}
 export default function Square() {
@@ -319,15 +319,15 @@ export default function Square() {
 }
 ```
 
-The second line returns a button. The `return` JavaScript keyword means whatever comes after is returned as a value to the caller of the function. `<button>` is a *JSX element*. A JSX element is a combination of JavaScript code and HTML tags that describes what you'd like to display. `className="square"` is a button property or *prop* that tells CSS how to style the button. `X` is the text displayed inside of the button and `</button>` closes the JSX element to indicate that any following content shouldn't be placed inside the button.
+Друга строка повертає кнопку. Ключове слово `return` в JavaScript означає, що будь-що після буде повернуто як значення до місця звідки було викликано функцію. `<button>` це *JSX елемент*. JSX елемент це комбінація JavaScript коду та HTML тегів які описують що ви хочете відобразити. `className="square"` це властивість кнопки, або *проп* який каже CSS як стилізувати цю кнопку. `X` це текст що відображається всередині кнопки, а `</button>` зариває JSX елемент щоб вказати що будь-який контент що слідуж далі не має бути всередині кнопки.
 
 #### `styles.css` {/*stylescss*/}
 
-Click on the file labeled `styles.css` in the _Files_ section of CodeSandbox. This file defines the styles for your React app. The first two _CSS selectors_ (`*` and `body`) define the style of large parts of your app while the `.square` selector defines the style of any component where the `className` property is set to `square`. In your code, that would match the button from your Square component in the `App.js` file.
+Натисніть на файл `styles.css` в розділі _Файли_ в CodeSandbox. Цей файл визначає стилі вашого застосунку React. Перші два _CSS селектори_ (`*` та `body`) визначають стиль великих частин вашого застосунку, коли селектор `.square` визначає стиль елементу де властивість `className` має значення `square`. В вашому коді це співпадає з кнопкою з компоненту Square в файлі `App.js`.
 
 #### `index.js` {/*indexjs*/}
 
-Click on the file labeled `index.js` in the _Files_ section of CodeSandbox. You won't be editing this file during the tutorial but it is the bridge between the component you created in the `App.js` file and the web browser.
+Натисніть на файл `index.js` в розділі _Файли_ в CodeSandbox. Ви не будете редагувати цей файл в цьому посібнику, але це міст між компонентом що ви створили в файлі `App.js` та браузером.
 
 ```jsx
 import { StrictMode } from 'react';
@@ -337,20 +337,20 @@ import './styles.css';
 import App from './App';
 ```
 
-Lines 1-5 brings all the necessary pieces together: 
+Строки 1-5 збирають всі необхідні шматки разом:
 
 * React
-* React's library to talk to web browsers (React DOM)
-* the styles for your components
-* the component you created in `App.js`.
+* Бібліотека React для спілкування з браузером (React DOM)
+* Стилі ваших компонентів
+* Компонент, що ви створили в `App.js`.
 
-The remainder of the file brings all the pieces together and injects the final product into `index.html` in the `public` folder.
+Залишок цього файлу збирає шматки разом та вставляє результат в `index.html`, що знаходиться в папці `public`.
 
-### Building the board {/*building-the-board*/}
+### Будуємо дошку {/*building-the-board*/}
 
-Let's get back to `App.js`. This is where you'll spend the rest of the tutorial.
+Повернемось до `App.js`. Тут ви проведете решту часу в посібнику.
 
-Currently the board is only a single square, but you need nine! If you just try and copy paste your square to make two squares like this:
+Зараз дошка це лише один квадрат, але вам потрібні девять! Якщо ви спробуєте скопіювати та вставити ваш квадрат щоб отримати два квадрати як тут:
 
 ```js {2}
 export default function Square() {
@@ -358,15 +358,14 @@ export default function Square() {
 }
 ```
 
-You'll get this error:
+Ви отримаєте помилку:
 
 <ConsoleBlock level="error">
 
 /src/App.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment `<>...</>`?
 
 </ConsoleBlock>
-
-React components need to return a single JSX element and not multiple adjacent JSX elements like two buttons. To fix this you can use *fragments* (`<>` and `</>`) to wrap multiple adjacent JSX elements like this:
+Компоненти React мають повертати один JSX element а не багато суміжних JSX елементів, як дві кнопки. Щоб виправити це використовуйте *фрагменти* (`<>` and `</>`) щоб загорнути суміжні JSX елементи як тут:
 
 ```js {3-6}
 export default function Square() {
@@ -379,17 +378,17 @@ export default function Square() {
 }
 ```
 
-Now you should see:
+Зараз ви маєте побачити:
 
-![two x-filled squares](../images/tutorial/two-x-filled-squares.png)
+![два квадрати з символом x](../images/tutorial/two-x-filled-squares.png)
 
-Great! Now you just need to copy-paste a few times to add nine squares and...
+Чудово, тепер вам потрібно скопіювати декілька разів щоб додати девять квадратів, і...
 
-![nine x-filled squares in a line](../images/tutorial/nine-x-filled-squares.png)
+![девять квадратів з символом x в один ряд](../images/tutorial/nine-x-filled-squares.png)
 
-Oh no! The squares are all in a single line, not in a grid like you need for our board. To fix this you'll need to group your squares into rows with `div`s and add some CSS classes. While you're at it, you'll give each square a number to make sure you know where each square is displayed.
+О ні! Всі квадрати в один ряд, а не в сітці як потрібно для дошки. Щоб виправити це вам потрібно згрупувати квадрати в строки з використанням `div` та додати деякі CSS класи. Поки ви це робите, дайте номер кожному квадрату щоб впевнитись що вони всі відображаються.
 
-In the `App.js` file, update the `Square` component to look like this:
+В файлі `App.js` оновіть компонент `Square` до такого вигляду:
 
 ```js {3-19}
 export default function Square() {
@@ -415,11 +414,11 @@ export default function Square() {
 }
 ```
 
-The CSS defined in `styles.css` styles the divs with the `className` of `board-row`. Now that you've grouped your components into rows with the styled `div`s you have your tic-tac-toe board:
+CSS описаний в стилях `styles.css` стилізує елементи div що мають властивість `className` зі значенням `board-row`. Тепер після групування компонентів в лінії з стиліщованими `div` ви маєте дошку для хрестиків-нуликів:
 
-![tic-tac-toe board filled with numbers 1 through 9](../images/tutorial/number-filled-board.png)
+![дошка хрестиків-нуликів заповнена номерами від 1 до 9](../images/tutorial/number-filled-board.png)
 
-But you now have a problem. Your component named `Square`, really isn't a square anymore. Let's fix that by changing the name to `Board`:
+Але тепер є інша проблема. Компонент що названий `Square`, насправді більше не квадрат. Виправимо це змінивши назву на `Board`:
 
 ```js {1}
 export default function Board() {
@@ -427,7 +426,7 @@ export default function Board() {
 }
 ```
 
-At this point your code should look something like this:
+На цьому кроці ваш код має виглядати так:
 
 <Sandpack>
 
@@ -504,15 +503,15 @@ body {
 
 <Note>
 
-Psssst... That's a lot to type! It's okay to copy and paste code from this page. However, if you're up for a little challenge, we recommend only copying code that you've manually typed at least once yourself.
+Ого... Тут багато писати! Не соромтесь копіювати код з цієї сторінки. Проте, якщо ви хочете випробування, рекомендуємо копіювати лише код, який ви спробували написати самостійно хоча б один раз.
 
 </Note>
 
-### Passing data through props {/*passing-data-through-props*/}
+### Передавання даних через пропси {/*passing-data-through-props*/}
 
-Next, you'll want to change the value of a square from empty to "X" when the user clicks on the square. With how you've built the board so far you would need to copy-paste the code that updates the square nine times (once for each square you have)! Instead of copy-pasting, React's component architecture allows you to create a reusable component to avoid messy, duplicated code.
+Далі, ви захочете змітити значення квадрату з порожнього на "X" коли користувач натисне на нього. З написаним до цього кодом вам доведеться вставляти код що оновлює квадрат девять разів (для кожного квадрату що в вас є!) Замість копіювання, архітектура React компонентів дозволяє вам створювати перевикористовувані компоненти щоб уникнути брудного, повторюваного коду.
 
-First, you are going to copy the line defining your first square (`<button className="square">1</button>`) from your `Board` component into a new `Square` component:
+Перш за все, ви маєте скопіювати строку до визначає ваш перший квадрат (`<button className="square">1</button>`) з компоненту `Board` в новий компонент `Square`:
 
 ```js {1-3}
 function Square() {
@@ -524,7 +523,7 @@ export default function Board() {
 }
 ```
 
-Then you'll update the Board component to render that `Square` component using JSX syntax:
+Тепер оновіть компонент Board щоб відображати той компонент `Square` використовуючи синтакс JSX:
 
 ```js {5-19}
 // ...
@@ -551,15 +550,15 @@ export default function Board() {
 }
 ```
 
-Note how unlike the browser `div`s, your own components `Board` and `Square` must start with a capital letter. 
+Зверніть увагу, що на відміну від браузерного `div`, ваші власні компоненти `Board` та `Square` мають починатись з великої літери.
 
-Let's take a look:
+Давайте подивимось:
 
-![one-filled board](../images/tutorial/board-filled-with-ones.png)
+![дошка зі значеннями 1](../images/tutorial/board-filled-with-ones.png)
 
-Oh no! You lost the numbered squares you had before. Now each square says "1". To fix this, you will use *props* to pass the value each square should have from the parent component (`Board`) to its child (`Square`).
+О ні! Ви втратили пронумеровані квадрати що були до цього. Зараз кожен квадрат каже "1". Щоб це виправити використайте *пропси* щоб передати значення в кожен квадрат з батьківського компоненту (`Board`) до його дитини (`Square`).
 
-Update the `Square` component to read the `value` prop that you'll pass from the `Board`:
+Оновіть компонент `Square` щоб зчитувати проп `value` який ви передасте з `Board`:
 
 ```js {1}
 function Square({ value }) {
@@ -567,9 +566,9 @@ function Square({ value }) {
 }
 ```
 
-`function Square({ value })` indicates the Square component can be passed a prop called `value`.
+`function Square({ value })` вказує що компонент Square може приймати проп з назвою `value`.
 
-Now you want to display that `value` instead of `1` inside every square. Try doing it like this:
+Тепер вам потрібно відобразити `value` замість `1` всередині кожного квадрату. Спробуйте щось таке:
 
 ```js {2}
 function Square({ value }) {
@@ -577,11 +576,11 @@ function Square({ value }) {
 }
 ```
 
-Oops, this is not what you wanted:
+Упс, це не зовсім те що вам потрібно:
 
-![value-filled board](../images/tutorial/board-filled-with-value.png)
+![дошка зі значеннями value](../images/tutorial/board-filled-with-value.png)
 
-You wanted to render the JavaScript variable called `value` from your component, not the word "value". To "escape into JavaScript" from JSX, you need curly braces. Add curly braces around `value` in JSX like so:
+Ви хотіли відобразити JavaScript змінну що називається `value` з вашого компоненту, а не слово "value". Щоб "втекти до JavaScript" з JSX, потрібні хвилясті дужки. Додайте їх навколо `value` в JSX як тут:
 
 ```js {2}
 function Square({ value }) {
@@ -589,11 +588,11 @@ function Square({ value }) {
 }
 ```
 
-For now, you should see an empty board:
+Станом на зараз, ви маєте бачити порожню дошку:
 
-![empty board](../images/tutorial/empty-board.png)
+![порожня дошка](../images/tutorial/empty-board.png)
 
-This is because the `Board` component hasn't passed the `value` prop to each `Square` component it renders yet. To fix it you'll add the `value` prop to each `Square` component rendered by the `Board` component:
+Це відбувається через те що компонент `Board` не передав проп `value` до кожного компоненту `Square`. Щоб це виправити додайте проп `value` до кожного компоненту `Square` що відображається в компоненті `Board`:
 
 ```js {5-7,10-12,15-17}
 export default function Board() {
@@ -619,11 +618,11 @@ export default function Board() {
 }
 ```
 
-Now you should see a grid of numbers again:
+Зараз ви знову маєте бачити сітку з номерами:
 
-![tic-tac-toe board filled with numbers 1 through 9](../images/tutorial/number-filled-board.png)
+![дошка хрестиків-нуликів заповнена номерами від 1 до 9](../images/tutorial/number-filled-board.png)
 
-Your updated code should look like this:
+Ваші зміни мають виглядати так:
 
 <Sandpack>
 
@@ -702,9 +701,9 @@ body {
 
 </Sandpack>
 
-### Making an interactive component {/*making-an-interactive-component*/}
+### Робимо компонент інтерактивним {/*making-an-interactive-component*/}
 
-Let's fill the `Square` component with an `X` when you click it. Declare a function called `handleClick` inside of the `Square`. Then, add `onClick` to the props of the button JSX element returned from the `Square`:
+Давайте заповнимо компонент `Square` символом `X` коли ви натискаєте на нього. Визначте функцію, що називається `handleClick` всередині `Square`. Тоді, додайте `onClick` до пропсів JSX елементу button що повертається зі `Square`:
 
 ```js {2-4,9}
 function Square({ value }) {
@@ -723,19 +722,19 @@ function Square({ value }) {
 }
 ```
 
-If you click on a square now, you should see a log saying `"clicked!"` in the _Console_ tab at the bottom of the _Browser_ section in CodeSandbox. Clicking the square more than once will log `"clicked!"` again. Repeated console logs with the same message will not create more lines in the console. Instead, you will see an incrementing counter next to your first `"clicked!"` log.
+Якщо ви натиснете на квадрат зараз, ви маєте побачити повідомлення `"clicked!"` у вкладці _Консоль_ внизу розділу _Браузер_ в CodeSandbox. Натискання квадрату більше одного разу покаже повідомлення `"clicked!"` знову. Повторні повідомлення того самого повідомлення не будуть додавати нові строки в консоль. Замість цього, ви побачите зростаючий лічильник біля першого повідомлення `"clicked!"`.
 
 <Note>
 
-If you are following this tutorial using your local development environment, you need to open your browser's Console. For example, if you use the Chrome browser, you can view the Console with the keyboard shortcut **Shift + Ctrl + J** (on Windows/Linux) or **Option + ⌘ + J** (on macOS).
+Якщо ви слідуєте цьому посіднику використовуючи локальне середовище розробки, вам потрібно відкрити консоль в вашому браузері. Наприклад, якщо ви використовуєте браузер Chrome, ви можете побачити консоль з використанням швидкого набору на клавіатурі **Shift + Ctrl + J** (для Windows/Linux) або **Option + ⌘ + J** (для macOS).
 
 </Note>
 
-As a next step, you want the Square component to "remember" that it got clicked, and fill it with an "X" mark. To "remember" things, components use *state*.
+Як наступний крок, вам треба зробити щоб компонент Square "пам'ятав" що на нього натиснули, та заповнити його позначкою "X". Щоб "пам'ятати" речі, компоненти використовують *стан*.
 
-React provides a special function called `useState` that you can call from your component to let it "remember" things. Let's store the current value of the `Square` in state, and change it when the `Square` is clicked.
+React надає спеціальну функцію що називається `useState`, яку ви можете викликати з вашого компоненту щоб дати компоненту "памятати" щось. Давайте зберігати поточне значення зі `Square` в стані, та змінювати його коли на `Square` натискають.
 
-Import `useState` at the top of the file. Remove the `value` prop from the `Square` component. Instead, add a new line at the start of the `Square` that calls `useState`. Have it return a state variable called `value`:
+Імпортуйте `useState` зверху файлу. Приберіть проп `value` з компоненту `Square`. Замість цього, додайте нову строку на початку компоненту `Square` що викликає `useState`. Зробіть щоб вона повертала змінну стану з назвою `value`:
 
 ```js {1,3,4}
 import { useState } from 'react';
@@ -747,9 +746,9 @@ function Square() {
     //...
 ```
 
-`value` stores the value and `setValue` is a function that can be used to change the value. The `null` passed to `useState` is used as the initial value for this state variable, so `value` here starts off equal to `null`.
+`value` зберігає значення, а `setValue` це функція що використовується щоб змінити значення. Значення `null` передане до `useState` використовується як початкове значення для змінної стану, тож `value` тут початково дорівнює `null`.
 
-Since the `Square` component no longer accepts props anymore, you'll remove the `value` prop from all nine of the Square components created by the Board component:
+Оскільки компонент `Square` більше не приймає пропси, приберіть проп `value` з усіх девяти компонентів Square творених компонентом Board:
 
 ```js {6-8,11-13,16-18}
 // ...
@@ -776,7 +775,7 @@ export default function Board() {
 }
 ```
 
-Now you'll change `Square` to display an "X" when clicked. Replace the `console.log("clicked!");` event handler with `setValue('X');`. Now your `Square` component looks like this:
+Зараз змініть `Square` щоб відображати "X" коли натиснуто. Замініть обробник події `console.log("clicked!");`  на `setValue('X');`. Зараз компонент `Square` має виглядати так:
 
 ```js {5}
 function Square() {
@@ -797,13 +796,13 @@ function Square() {
 }
 ```
 
-By calling this `set` function from an `onClick` handler, you're telling React to re-render that `Square` whenever its `<button>` is clicked. After the update, the `Square`'s `value` will be `'X'`, so you'll see the "X" on the game board. Click on any Square, and "X" should show up:
+Викликаючи цю функцію `set` з обробника `onClick`, ви кажете React зробити повторний рендер `Square` коли його елемент `<button>` натиснуто. Після оновлення, в `Square` значення `value` стане `'X'`, тож ви побачите "X" на гральній дошці. Натисніть будь-який квадрат, він має показати "X":
 
-![adding xes to board](../images/tutorial/tictac-adding-x-s.gif)
+![додавання x на дошку](../images/tutorial/tictac-adding-x-s.gif)
 
-Each Square has its own state: the `value` stored in each Square is completely independent of the others. When you call a `set` function in a component, React automatically updates the child components inside too.
+Кожен компонент Square має власний стан: `value` зберігається в кожному Square є повністю незалежним від інших. Коли ви викликаєте функцію `set` в компоненті, React aвтоматично оновлює всі дочірні компоненти.
 
-After you've made the above changes, your code will look like this:
+Після зроблених змін вище, ваш код має виглядати так:
 
 <Sandpack>
 
@@ -899,7 +898,7 @@ body {
 
 ### React Developer Tools {/*react-developer-tools*/}
 
-React DevTools let you check the props and the state of your React components. You can find the React DevTools tab at the bottom of the _browser_ section in CodeSandbox:
+React DevTools дають вам перевірити пропси та стан ваших React компонентів. Ви можете знайти вкладку React DevTools внизу розділу _браузер_ в CodeSandbox:
 
 ![React DevTools in CodeSandbox](../images/tutorial/codesandbox-devtools.png)
 
